@@ -1,0 +1,9 @@
+#hmmsw option tests...
+../hmmb tmp.hmm extended-selex.1
+../hmmsw tmp.hmm extended-selex.1
+../hmmsw -c tmp.hmm extended-selex.1
+../hmmsw -h
+../hmmsw -q tmp.hmm extended-selex.1
+../hmmsw -r ../Demos/nucleic.rnd tmp.hmm extended-selex.1
+../hmmsw -t 20 tmp.hmm extended-selex.1
+../hmmsw -F tmp.hmm extended-selex.1

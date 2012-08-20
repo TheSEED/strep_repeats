@@ -1,0 +1,6 @@
+#hmm_convert option tests...
+../hmmb tmp.hmm extended-selex.1
+../hmm_convert tmp.hmm tmp.sc
+../hmm_convert -b tmp.sc tmp.hmm
+../hmm_convert -h
+../hmm_convert -P tmp.hmm tmp.sc

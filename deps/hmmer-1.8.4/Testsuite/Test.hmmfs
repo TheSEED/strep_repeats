@@ -1,0 +1,9 @@
+#hmmfs option tests...
+../hmmb tmp.hmm extended-selex.1
+../hmmfs tmp.hmm extended-selex.1
+../hmmfs -c tmp.hmm extended-selex.1
+../hmmfs -h
+../hmmfs -q tmp.hmm extended-selex.1
+../hmmfs -r ../Demos/nucleic.rnd tmp.hmm extended-selex.1
+../hmmfs -t 20 tmp.hmm extended-selex.1
+../hmmfs -F tmp.hmm extended-selex.1

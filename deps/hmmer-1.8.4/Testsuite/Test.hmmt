@@ -1,0 +1,19 @@
+#hmmt option tests...
+../hmmt tmp.hmm minitrain.fa
+../hmmt -a minitrain.slx tmp.hmm minitrain.fa
+../hmmt -h
+../hmmb tmp.sc minitrain.slx 
+../hmmt -i tmp.sc tmp.hmm minitrain.fa
+../hmmt -k 1.0 tmp.hmm minitrain.fa
+../hmmt -o tmp.slx tmp.hmm minitrain.fa
+../hmmt -p ../Demos/Nucleic.pri tmp.hmm minitrain.fa
+../hmmt -r 0.90 tmp.hmm minitrain.fa
+../hmmt -s 666 tmp.hmm minitrain.fa
+../hmmt -l 6 tmp.hmm minitrain.fa
+../hmmt -v tmp.hmm minitrain.fa
+../hmmt -A 0.9 tmp.hmm minitrain.fa
+../hmmt -B tmp.hmm minitrain.fa
+../hmmt -P ../Demos/PAM250 tmp.hmm miniprotein.slx
+../hmmt -S ../Demos/saschedule.dat tmp.hmm minitrain.fa
+../hmmt -W tmp.hmm minitrain.fa
+

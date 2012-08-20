@@ -1,0 +1,113 @@
+.TH "HMMER" l "March 1995" "HMMER 1.8" hmmer
+
+.SH NAME
+.TP 
+.I HMMER
+- software suite for making and using hidden Markov models of biological 
+sequences
+.SH SYNOPSIS
+.TP
+.I hmmt 
+- create an HMM from unaligned training sequences
+.TP
+.I hmmb
+- build an HMM from a multiple alignment
+.TP
+.I hmma 
+- construct a multiple alignment of some sequences using an HMM
+.TP
+.I hmms
+- search a sequence database for complete (global) matches to an HMM
+.TP
+.I hmmls
+- search a sequence database for local matches of an HMM, to subsequences
+in longer database sequences (i.e., ignores overhangs on the end of the
+database sequences)
+.TP
+.I hmmsw
+- search a sequence database for partial matches, of part of an HMM to
+subsequences in the database sequences: i.e., Smith/Waterman style searching;
+reports only the single best hit per database sequence; ideal for protein
+database searches
+.TP
+.I hmmfs
+- search a sequence database for multiple non-overlapping Smith/Waterman-style
+matches; linear memory requirement; ideal for nucleic acid database searches
+.TP
+.I hmme
+- emit likely sequences from a model
+.TP
+.I hmm_convert
+- convert compact binary HMM files to machine-independent, portable ASCII format
+.SH DESCRIPTION
+
+These programs build and use fully probabilistic hidden Markov models
+(HMMs) of the primary consensus sequence of a family of proteins or
+nucleic acids. HMMs are similar to "profiles" (Gribskov, McLachlan,
+and Eisenberg, PNAS 84:4355-4358 1987) but are more firmly grounded
+theoretically, and seem to be more powerful empirically.  HMMs are
+useful both for multiple sequence alignment and for sensitive
+searching of sequence databases. HMMs for profile-like biological
+sequence analysis were introduced by David Haussler and colleagues;
+see Krogh et al., J.  Mol. Biol.  235:1501-1531 1994.
+
+For all the programs, unaligned sequence files can be in FASTA,
+Genbank, EMBL, or Swissprot format. The programs automatically detect
+what format the file is in. Aligned sequence files can be in GCG MSF
+format or SELEX format. SELEX format is a simple format of one line
+per sequence, containing the name first, followed by the aligned
+sequence.  MSF and SELEX alignment files can also be used where
+unaligned format files are required; the sequences will be read in and
+their gaps removed.
+
+If you forget the command-line syntax or available options of any of
+the programs, you can type just the name of the program with no other
+arguments and get a short help message. If you also include option
+{\tt -h}, you get version info as well (the software version number is
+helpful if you report bugs or other problems to me).
+
+The programs work on RNA, DNA, and protein sequence. They
+automatically detect what your sequences are. However, the behavior of
+the programs when a nucleic acid model is used to analyze protein
+sequences, or vice versa, is undefined, and certain other situations
+may arise (such as searching the complementary strand of a database)
+that are nonsensical in one context. Be forewarned.
+
+Some of the programs may have experimental options listed for their
+usage. These options are separated from the rest and annotated as
+experimental. Supported options are in small letters, experimental
+options are in caps. Use experimental options at your own risk;
+they're just my own mechanism for trying out new ideas, and I don't
+always support them adequately.
+
+For more information, see man pages for the individual programs, or
+the User's Guide which is part of this distribution.
+
+.SH SEE ALSO
+.PP
+Individual man pages: hmmb(l), hmme(l), hmmfs(l), hmmls(l), hmms(l), 
+hmmsw(l), hmmt(l), hmm_convert(l)
+.PP
+User guide and tutorial: Userguide.ps
+.SH BUGS
+
+Please report bugs to Sean Eddy at eddy@genetics.wustl.edu.
+Reported bugs are generally fixed within hours or days and
+new code is immediately made available via ftp and the Web.
+
+.SH NOTES
+
+This software and documentation is Copyright (C) 1992-1995, Sean R. Eddy.
+It is freely distributable under terms of the GNU General Public
+License. See COPYING, in the source code distribution, for more
+details, or contact me.
+
+.nf
+Sean Eddy
+Dept. of Genetics, Washington Univ. School of Medicine
+660 S. Euclid Box 8232
+St Louis, MO 63110 USA
+Phone: 1-314-362-7666
+FAX  : 1-314-362-2985
+Email: eddy@genetics.wustl.edu
+.fi

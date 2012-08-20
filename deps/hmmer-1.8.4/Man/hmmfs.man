@@ -1,0 +1,137 @@
+.TH "hmmfs" l "March 1995" "HMMER 1.8" hmmfs
+
+.SH NAME
+.TP
+.I hmmfs
+- HMM fragment search - multiple-hit Smith/Waterman
+.SH SYNOPSIS
+.B hmmfs [options] hmmfile seqfile
+.SH DESCRIPTION
+.I hmmfs
+searches a sequence database
+.I seqfile
+looking for matches to the HMM in
+.I hmmfile.
+An optimal set of non-overlapping multiple hits to subsequences and to
+fragments of the model are allowed for each database sequence -- i.e.,
+the program does a multiple-hit variant of Smith/Waterman searching.
+.PP
+.I hmmfs
+is designed to be particularly useful for detecting repeated motifs
+in long sequences. It has been used successfully for Alu detection
+in human cosmid sequences, and for recognizing multiple tandem domains
+in mosaic proteins.
+.PP
+The memory requirement is linear in the length of the longest database
+sequence, not quadratic, permitting very long genomic DNA sequences (>
+1 Mb) to be searched.
+.PP
+The scores reported by hmmfs are in bits of information. Specifically,
+they are log-odds scores: the log of the ratio of the probability of
+the sequence given the model and the probability of the sequence given
+a simple random sequence model.  This score is related to the
+statistical significance of the alignment. A score of zero is
+marginal; according to the model's statistics, it's 50% likely that
+the alignment is a real match to the model, and 50% likely that it's
+not. The higher the score, the better; a score of 100 means that it is
+2^100-fold more likely that the sequence is a match to the model than
+not. In practice, a database contains many more unrelated sequences
+than related ones, so the actual score required for statistical
+significance is somewhat higher than zero -- as a rule of thumb for
+protein database searches, don't trust scores lower than the log2 of
+the number of seqs in the database). This is 16 bits for our current
+SWIR5 composite protein database of 57,000 sequences. See the User Guide
+for more details.
+.PP
+Note the differences between the different HMM searching programs.
+.I hmms
+looks for a global alignment of HMM to sequences (Needleman/Wunsch
+style); overhangs of unmatches sequence are not permitted, and
+the full model must be matched.
+.I hmmls
+looks for one or more local alignments of the full model to a subsequence
+of each database sequence; unmatches sequence overhangs are allowed.
+.I hmmsw
+looks for the best fragmentary match of a subsequence to part of
+the model (Smith/Waterman style).
+.I hmmfs
+looks for multiple non-overlapping matches of subsequences to
+parts of the model (modified multiple-hit Smith/Waterman).
+.I hmms 
+is useful for scoring or detecting whole proteins with complete models;
+.I hmmls
+is useful for scoring or detecting intact domains in protein sequences
+or complete repeats in nucleic acid sequences;
+.I hmmsw
+is useful for general protein database searching, allowing for
+possible incomplete matches to a model; 
+.I hmmfs
+is useful for general nucleic acid database searching or for
+scoring/detecting domains in multidomain proteins, allowing
+for multiple non-overlapping matches per sequence.
+
+.SH OPTIONS
+.TP
+-c
+Search complementary strand too. DNA/RNA only; undefined behavior on
+protein sequences or models.
+.TP
+-h
+Print short usage and help info for the program.
+.TP
+-q
+quiet -- suppress the verbose banner. Useful for piping the output
+of hmmfs into another program or script.
+.TP
+-r <rfile>
+Read the random sequence model from <rfile>. This model is used as the
+null hypothesis for calculating log-odds alignment scores.
+.TP
+-t <thresh>
+Report only matches above a score of 
+.I <thresh>
+bits. Only well-defined for thresholds greater than or equal to
+zero. 
+.TP
+-F
+For each hit, print a "fancy" BLAST-style representation of the alignment
+to the model. Three lines are shown; a line for the model consensus,
+a line for the matched positions, and a line for the sequence.
+In the model consensus line, upper-case letters represent strong
+consensus positions, lower-case letters represent the best identity
+at a weak consensus position. (Strong and weak are arbitrarily defined;
+for protein models, log-odds symbol scores above 2.0 bits are called
+"strong" consensus.) On the match line, letters represent exact matches
+to the highest scoring possible residue according to the HMM, and +'s
+represent matches to positive-scoring residues.
+
+.SH SEE ALSO
+.PP
+Overview page: hmmer(l)
+.PP
+Individual man pages: hmma(l), hmmb(l), hmme(l), hmmls(l), hmms(l), 
+hmmsw(l), hmmt(l), hmm_convert(l)
+.PP
+User guide and tutorial: Userguide.ps
+
+.SH BUGS
+No major bugs known.
+.PP
+Not very tolerant of errors on the command line.
+
+.SH NOTES
+This software and documentation is Copyright (C) 1992-1995, Sean R. Eddy.
+It is freely distributable under terms of the GNU General Public
+License. See COPYING, in the source code distribution, for more
+details, or contact me.
+
+.nf
+Sean Eddy
+Dept. of Genetics, Washington Univ. School of Medicine
+660 S. Euclid Box 8232
+St Louis, MO 63110 USA
+Phone: 1-314-362-7666
+FAX  : 1-314-362-2985
+Email: eddy@genetics.wustl.edu
+.fi
+
