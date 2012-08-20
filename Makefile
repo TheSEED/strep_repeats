@@ -9,7 +9,7 @@ HMM_SRC = deps/hmmer-1.8.4
 all: deps bin data
 
 deploy: deploy-client
-deploy-client: deploy-deps deploy-scripts deploy-libs deploy-data
+deploy-client: deploy-deps deploy-scripts deploy-data
 
 deploy-deps: $(HMM_SRC)/hmmls
 	test -d $(TARGET)/libexec || mkdir $(TARGET)/libexec
