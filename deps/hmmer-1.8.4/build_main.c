@@ -18,6 +18,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <float.h>
 #include <limits.h>
 
 #ifdef NEED_GETOPTH
