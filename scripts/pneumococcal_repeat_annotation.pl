@@ -7,6 +7,7 @@ use Bio::SeqI;
 use Data::Dumper;
 use File::Temp;
 use File::Copy;
+use File::Basename;
 
 my $n = 0;
 my %start;
@@ -103,9 +104,12 @@ else
     die "Usage: $0 [input-file] > output\n";
 }
 
+my $ibase = basename($input_file);
+
 foreach my $repeat (@repeats) {
+
     print STDERR "Searching sequence $input_file for repeat $repeat...";
-    run_system("$HMMLS -c -t $cutoffs{$repeat} $hmms{$repeat} $input_file > $tmpdir/$input_file.$input_files{$repeat}");
+    run_system("$HMMLS -c -t $cutoffs{$repeat} $hmms{$repeat} $input_file > $tmpdir/$ibase.$input_files{$repeat}");
     print STDERR "done\n";
 }
 
@@ -114,8 +118,8 @@ open(OUT, ">&STDOUT") or confess "Cannot reopen STDOUT: $!";
 {
     my $genome = $input_file;
     foreach my $repeat (sort keys %input_files) {						# parse information from HMM output
-	open(IN, "<", "$tmpdir/$genome.$input_files{$repeat}") or
-	    confess "Cannot open input file $tmpdir/$genome.$input_files{$repeat}: $!";
+	open(IN, "<", "$tmpdir/$ibase.$input_files{$repeat}") or
+	    confess "Cannot open input file $tmpdir/$ibase.$input_files{$repeat}: $!";
 	foreach (<IN>) {
 	    chomp;
 	    if (my ($score) = /^(\d+\.\d+)/) {
