@@ -1,4 +1,7 @@
 TOP_DIR = ../..
+DEPLOY_RUNTIME ?= /kb/runtime
+TARGET ?= /kb/deployment
+
 include $(TOP_DIR)/tools/Makefile.common
 
 SRC_PERL = $(wildcard scripts/*.pl)
@@ -6,10 +9,12 @@ BIN_PERL = $(addprefix $(BIN_DIR)/,$(basename $(notdir $(SRC_PERL))))
 
 HMM_SRC = deps/hmmer-1.8.4
 
-all: deps bin data
+default: deps bin data
 
 deploy: deploy-client
 deploy-client: deploy-deps deploy-scripts deploy-data
+
+deploy-service:
 
 deploy-deps: $(HMM_SRC)/hmmls
 	test -d $(TARGET)/libexec || mkdir $(TARGET)/libexec
