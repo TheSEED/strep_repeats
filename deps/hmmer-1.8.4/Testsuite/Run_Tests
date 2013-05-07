@@ -1,0 +1,32 @@
+#! /usr/local/bin/perl
+
+# Test suite driver for HMMER
+
+@testsuites = ("Test.hmma", "Test.hmmb", "Test.hmme", "Test.hmmfs",
+               "Test.hmmls","Test.hmms", "Test.hmmsw", "Test.hmmt",
+               "Test.hmm_convert", "Test.formats");
+
+while ($testsuite = shift(@testsuites))
+{
+   open (TESTSUITE, "$testsuite") || die;
+   while (<TESTSUITE>) {
+     chop;
+     if (/^\#(.+)$/) { print $1, "\n"; }
+     else {
+        $status = system("$_ 2>&1 > tmp.out");
+        if ($status > 0) {
+           print ("failure: $_\n");
+           $failed++;
+        }
+        $total++;
+     }
+   }
+}
+
+$passed = $total - $failed;
+print "Tests: $total. Passed: $passed. Failed: $failed\n";	
+
+unlink "tmp.out";
+unlink "tmp.sc";
+unlink "tmp.hmm";
+unlink "tmp.slx";

@@ -1,0 +1,10 @@
+#hmma option tests...
+../hmmb tmp.hmm extended-selex.1
+../hmma tmp.hmm extended-selex.1
+../hmma -h
+../hmma -m tmp.hmm extended-selex.1
+../hmma -o tmp.slx tmp.hmm extended-selex.1
+../hmma -q tmp.hmm extended-selex.1
+../hmma -r ../Demos/nucleic.rnd tmp.hmm extended-selex.1
+../hmma -s tmp.sc tmp.hmm extended-selex.1
+../hmma -R tmp.hmm extended-selex.1

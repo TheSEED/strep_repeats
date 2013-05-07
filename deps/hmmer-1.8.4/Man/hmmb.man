@@ -1,0 +1,194 @@
+.TH "hmmb" l "March 1995" "HMMER 1.8" hmmb 
+
+.SH NAME
+.TP
+.I hmmb
+- construct an HMM from a multiple sequence alignment
+.SH SYNOPSIS
+.B hmmb [options] hmmfile seqfile
+.SH DESCRIPTION
+.I hmmb
+creates a hidden Markov model from the alignment in
+.I seqfile,
+and saves the model to 
+.I hmmfile.
+.PP
+.I seqfile 
+may contain RNA, DNA, or amino acid sequences (don't mix them, though). 
+They may be in either GCG's MSF multiple alignment format or
+my SELEX alignment format. See bashford7.slx in the source
+distribution for an example of SELEX format.
+.PP
+Any of ' ', '.', or '-' are accepted as gap symbols. The output
+of 
+.I ClustalV 
+or
+.I ClustalW
+are acceptable SELEX format, if the header lines, consensus
+line, and coordinate lines (if any) are removed.
+SELEX format also has optional features for describing consensus
+structure, a canonical reference coordinate system, and
+individual structures for each sequence, but these are
+not described further here. See the HMMER User's Guide for
+more details.
+.PP 
+The algorithm used to build the model is an unpublished maximum
+likelihood model construction algorithm. It is different from the
+procedure described by Krogh et al. It is more theoretically
+satisfying than the ad hoc procedure they describe, but be warned that
+it tends to favor assigning columns of the alignment to match states
+instead of insert states rather more than a human's intuition would.
+.PP
+The statistics of the model -- symbol emission probabilities and
+state transition probabilities -- are set according to a maximum
+likelihood criterion. We have done some research on alternative
+parameter estimation methods. Maximum likelihood is sensitive
+to biased representation in the training data set; a large subfamily
+of highly related sequences will skew the model's statistics.
+There are three hmmb options for alleviating this problem.
+The 
+.I -d
+option implements "maximum discrimination", our recommended solution,
+which uses a rigorous method to find a model that optimally discriminates
+all the training sequences from random background.
+The 
+.I -v 
+and
+.I -w
+options implement two different ad hoc sequence weighting rules,
+providing the usual solution to the biased representation problem.
+
+.SH OPTIONS
+.TP
+-d
+Maximum discrimination parameter estimation, instead of maximum
+likelihood, to correct for biased representation and improve
+sensitivity overall. Parameters cannot be calculated analytically
+using this method, and must be calculated iteratively instead, so it
+takes a little longer.
+.TP
+-h
+Print short usage and help info for the program.
+.TP
+-p <priorfile>
+Use the prior probability distributions in <priorfile>, instead of
+the defaults. The defaults are almost identical to those given in
+the original Krogh et al. HMM paper. Example files that illustrate
+the correct prior file format are provided in the distribution for
+the default nucleic acid prior
+.I (Demos/Nucleic.pri)
+and the default amino acid prior
+.I (Demos/Simple.pri).
+The files are commented and should be self-documenting.
+More complicated (and experimental) priors based on mixture
+Dirichlets 
+and Dirichlet mixtures in combination with a softmax neural net
+taking input from X-ray crystal structure data for a subset
+of sequences in the alignment are given in
+.I (Demos/BrownHaussler.pri)
+and
+.I (Demos/Structure.pri),
+respectively.
+.TP
+-v
+Weight the input sequences to correct for biased representation using
+the Voronoi weighting rule of Sibbald and Argos (J. Mol. Biol.
+216:813-818 1990).  
+.TP 
+-w 
+Weight the input sequences to correct for biased representation using
+the Sonnhammer weighting rule of Gerstein et al. (J. Mol. Biol.
+235:1067-1078 1994).
+.TP
+-A <archprior>
+Probably useless to you. Sets the "architectural prior", which exerts a
+force that keeps model lengths under control at the expense of some
+likelihood. The default is 0.85. To make longer and slightly more
+high-scoring models, set it higher (to a maximum of 1.0). To make
+shorter models, set it lower.
+.TP 
+-C <cthresh>
+Probably useless to you.  Sets the convergence threshold for the
+maximum discrimination rules -d and -M. The default is 0.0001. To
+continue training longer, set this lower. This only takes effect if -d
+or -M are also on.
+.TP 
+-D <damp>
+Probably useless to you. Set the damping factor for making the maximum
+discrimination rules converge smoothly. Default is 0.99. If -d or -M
+options seem to be producing oscillatory behavior, increase this to
+0.999 or some such number closer to 1.
+.TP 
+-E <epsilon>
+Probably useless to you. Sets the learning rate of the maximin rule,
+toggled on by the -M option. Default is 0.1. To learn faster, at
+the risk of oscillatory behavior, increase this slightly to perhaps
+0.2.
+.TP 
+-M 
+Not recommended. Activates the maximin variant of maximum
+discrimination training.
+.TP
+-P <PAMfile>
+(Experimental) Use the scoring matrix in <PAMfile> as a source of
+prior symbol emission information. This results in behavior that
+is similar to the behavior of sequence "profiles" (Gribskov et al.,
+Meth. Enzymol. 183:146-159, 1990) when there are only a few sequences
+in the alignment. Because the default behavior of 
+.I hmmb
+is to use a very simple prior, with no information about the chemical
+similarities of amino acids, we believe the 
+.I -P 
+option will prove superior.
+
+The PAM file may be either a BLOSUM matrix (Henikoff and Henikoff, PNAS
+89:10915-10919, 1992) or a PAM matrix produced by the NCBI "pam" program
+that comes with BLAST (Altschul et al., JMB 215:403-410 1990). Other matrices
+may be used if they conform to one of these formats.
+.TP
+-R
+(Experimental) "Ragged" alignment -- ignore the exterior gaps in the
+alignment for the purposes of collecting state transition statistics.
+This is useful if your alignment is known to contain a number of
+fragments and you don't want the HMM to be counting a number of
+fictitious delete states to account for the missing ends.
+.TP
+-W <alifile>
+Re-saves the alignment to <alifile>. 
+Especially useful with -d, -v, or -w, since the alignment file includes
+the final weights that were used by the model. The alignment
+file also contains an #=RF line with x's marking the columns
+that were assigned to matches by HMM construction. This allows
+other programs to read the alignment file and readily make exactly the
+same state assignments as the HMM did.
+.SH SEE ALSO
+.PP
+Overview page: hmmer(l)
+.PP
+Individual man pages: hmma(l), hmme(l), hmmfs(l), hmmls(l), hmms(l), 
+hmmsw(l), hmmt(l), hmm_convert(l)
+.PP
+User guide and tutorial: Userguide.ps
+
+.SH BUGS
+No major bugs known.
+
+Not very tolerant of errors on the command line.
+
+.SH NOTES
+
+This software and documentation is Copyright (C) 1992-1995, Sean R. Eddy.
+It is freely distributable under terms of the GNU General Public
+License. See COPYING, in the source code distribution, for more
+details, or contact me.
+
+.nf
+Sean Eddy
+Dept. of Genetics, Washington Univ. School of Medicine
+660 S. Euclid Box 8232
+St Louis, MO 63110 USA
+Phone: 1-314-362-7666
+FAX  : 1-314-362-2985
+Email: eddy@genetics.wustl.edu
+.fi
+

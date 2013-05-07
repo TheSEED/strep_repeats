@@ -1,0 +1,268 @@
+FT   repeat_unit     8349..8408
+FT                   /colour=2
+FT                   /label=boxA
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 34.94 to model boxA
+FT   repeat_unit     complement(62132..62074)
+FT                   /colour=2
+FT                   /label=boxA
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 67.93 to model boxA
+FT   repeat_unit     complement(40690..40630)
+FT                   /colour=2
+FT                   /label=boxA
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 45.88 to model boxA
+FT   repeat_unit     complement(33969..33910)
+FT                   /colour=2
+FT                   /label=boxA
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 45.00 to model boxA
+FT   repeat_unit     15674..15733
+FT                   /colour=2
+FT                   /label=boxA
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 64.21 to model boxA
+FT   repeat_unit     19985..20044
+FT                   /colour=2
+FT                   /label=boxA
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 58.10 to model boxA
+FT   repeat_unit     135753..135812
+FT                   /colour=2
+FT                   /label=boxA
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 57.29 to model boxA
+FT   repeat_unit     287580..287639
+FT                   /colour=2
+FT                   /label=boxA
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 48.09 to model boxA
+FT   repeat_unit     509978..510038
+FT                   /colour=2
+FT                   /label=boxA
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 47.07 to model boxA
+FT   repeat_unit     complement(689016..688957)
+FT                   /colour=2
+FT                   /label=boxA
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 38.91 to model boxA
+FT   repeat_unit     complement(628824..628764)
+FT                   /colour=2
+FT                   /label=boxA
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 38.97 to model boxA
+FT   repeat_unit     complement(478272..478213)
+FT                   /colour=2
+FT                   /label=boxA
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 68.20 to model boxA
+FT   repeat_unit     62276..62335
+FT                   /colour=2
+FT                   /label=boxA
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 73.93 to model boxA
+FT   repeat_unit     complement(279063..279004)
+FT                   /colour=2
+FT                   /label=boxA
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 63.66 to model boxA
+FT   repeat_unit     complement(208491..208432)
+FT                   /colour=2
+FT                   /label=boxA
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 61.14 to model boxA
+FT   repeat_unit     complement(106211..106152)
+FT                   /colour=2
+FT                   /label=boxA
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 39.92 to model boxA
+FT   repeat_unit     complement(71365..71305)
+FT                   /colour=2
+FT                   /label=boxA
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 50.58 to model boxA
+FT   repeat_unit     8407..8454
+FT                   /colour=2
+FT                   /label=boxC
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 49.00 to model boxC
+FT   repeat_unit     complement(41830..41781)
+FT                   /colour=2
+FT                   /label=boxC
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 53.95 to model boxC
+FT   repeat_unit     complement(62074..62025)
+FT                   /colour=2
+FT                   /label=boxC
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 61.52 to model boxC
+FT   repeat_unit     62334..62383
+FT                   /colour=2
+FT                   /label=boxC
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 53.05 to model boxC
+FT   repeat_unit     114073..114122
+FT                   /colour=2
+FT                   /label=boxC
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 71.42 to model boxC
+FT   repeat_unit     122244..122294
+FT                   /colour=2
+FT                   /label=boxC
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 46.15 to model boxC
+FT   repeat_unit     114032..114079
+FT                   /colour=2
+FT                   /label=boxA
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 38.83 to model boxA
+FT   repeat_unit     165850..165899
+FT                   /colour=2
+FT                   /label=boxC
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 52.94 to model boxC
+FT   repeat_unit     282614..282663
+FT                   /colour=2
+FT                   /label=boxC
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 67.08 to model boxC
+FT   repeat_unit     complement(123976..123928)
+FT                   /colour=2
+FT                   /label=boxC
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 32.03 to model boxC
+FT   repeat_unit     complement(25531..25483)
+FT                   /colour=2
+FT                   /label=boxC
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 29.32 to model boxC
+FT   repeat_unit     complement(25479..25430)
+FT                   /colour=2
+FT                   /label=boxC
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 57.65 to model boxC
+FT   repeat_unit     complement(5413..5365)
+FT                   /colour=2
+FT                   /label=boxC
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 47.96 to model boxC
+FT   repeat_unit     complement(97209..97160)
+FT                   /colour=2
+FT                   /label=boxC
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 64.72 to model boxC
+FT   repeat_unit     60846..60895
+FT                   /colour=2
+FT                   /label=boxC
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 41.50 to model boxC
+FT   repeat_unit     complement(104019..103977)
+FT                   /colour=2
+FT                   /label=boxC
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 36.84 to model boxC
+FT   repeat_unit     complement(40631..40582)
+FT                   /colour=2
+FT                   /label=boxC
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 72.58 to model boxC
+FT   repeat_unit     165792..165850
+FT                   /colour=2
+FT                   /label=boxA
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 43.18 to model boxA
+FT   repeat_unit     complement(33906..33857)
+FT                   /colour=2
+FT                   /label=boxC
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 58.44 to model boxC
+FT   repeat_unit     15732..15781
+FT                   /colour=2
+FT                   /label=boxC
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 54.75 to model boxC
+FT   repeat_unit     135811..135860
+FT                   /colour=2
+FT                   /label=boxC
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 61.67 to model boxC
+FT   repeat_unit     510037..510085
+FT                   /colour=2
+FT                   /label=boxC
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 57.25 to model boxC
+FT   repeat_unit     complement(688958..688909)
+FT                   /colour=2
+FT                   /label=boxC
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 70.31 to model boxC
+FT   repeat_unit     complement(602961..602912)
+FT                   /colour=2
+FT                   /label=boxC
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 59.57 to model boxC
+FT   repeat_unit     complement(566651..566602)
+FT                   /colour=2
+FT                   /label=boxC
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 34.10 to model boxC
+FT   repeat_unit     complement(478214..478165)
+FT                   /colour=2
+FT                   /label=boxC
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 84.67 to model boxC
+FT   repeat_unit     complement(279005..278956)
+FT                   /colour=2
+FT                   /label=boxC
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 63.53 to model boxC
+FT   repeat_unit     complement(125104..125057)
+FT                   /colour=2
+FT                   /label=boxC
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 40.45 to model boxC
+FT   repeat_unit     complement(25642..25583)
+FT                   /colour=2
+FT                   /label=boxA
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 40.10 to model boxA
+FT   repeat_unit     complement(5445..5385)
+FT                   /colour=2
+FT                   /label=boxA
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 45.17 to model boxA
+FT   repeat_unit     complement(97267..97208)
+FT                   /colour=2
+FT                   /label=boxA
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 45.50 to model boxA
+FT   repeat_unit     60793..60853
+FT                   /colour=2
+FT                   /label=boxA
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 40.56 to model boxA
+FT   repeat_unit     complement(104078..104018)
+FT                   /colour=2
+FT                   /label=boxA
+FT                   /note=Detected using HMMER /Users/olson/dev_container/libexec/strep_repeats/hmmls; match of score 52.89 to model boxA
+FT   repeat_unit     8349..8454
+FT                   /colour=4
+FT                   /note=Composite BOX element
+FT                   /label=BOX
+FT   repeat_unit     complement(62132..62025)
+FT                   /colour=4
+FT                   /note=Composite BOX element
+FT                   /label=BOX
+FT   repeat_unit     complement(279063..278956)
+FT                   /colour=4
+FT                   /note=Composite BOX element
+FT                   /label=BOX
+FT   repeat_unit     114032..114122
+FT                   /colour=4
+FT                   /note=Composite BOX element
+FT                   /label=BOX
+FT   repeat_unit     165792..165899
+FT                   /colour=4
+FT                   /note=Composite BOX element
+FT                   /label=BOX
+FT   repeat_unit     complement(5445..5365)
+FT                   /colour=4
+FT                   /note=Composite BOX element
+FT                   /label=BOX
+FT   repeat_unit     complement(97267..97160)
+FT                   /colour=4
+FT                   /note=Composite BOX element
+FT                   /label=BOX
+FT   repeat_unit     60793..60895
+FT                   /colour=4
+FT                   /note=Composite BOX element
+FT                   /label=BOX
+FT   repeat_unit     complement(104078..103977)
+FT                   /colour=4
+FT                   /note=Composite BOX element
+FT                   /label=BOX
+FT   repeat_unit     complement(40690..40582)
+FT                   /colour=4
+FT                   /note=Composite BOX element
+FT                   /label=BOX
+FT   repeat_unit     complement(33969..33857)
+FT                   /colour=4
+FT                   /note=Composite BOX element
+FT                   /label=BOX
+FT   repeat_unit     15674..15781
+FT                   /colour=4
+FT                   /note=Composite BOX element
+FT                   /label=BOX
+FT   repeat_unit     135753..135860
+FT                   /colour=4
+FT                   /note=Composite BOX element
+FT                   /label=BOX
+FT   repeat_unit     509978..510085
+FT                   /colour=4
+FT                   /note=Composite BOX element
+FT                   /label=BOX
+FT   repeat_unit     complement(689016..688909)
+FT                   /colour=4
+FT                   /note=Composite BOX element
+FT                   /label=BOX
+FT   repeat_unit     complement(478272..478165)
+FT                   /colour=4
+FT                   /note=Composite BOX element
+FT                   /label=BOX
+FT   repeat_unit     62276..62383
+FT                   /colour=4
+FT                   /note=Composite BOX element
+FT                   /label=BOX

@@ -1,0 +1,19 @@
+#Sequence file format tests...
+../hmmb tmp.hmm miniprotein.slx
+../hmmls tmp.hmm msf.1
+../hmmls tmp.hmm nbrf.1
+../hmmls tmp.hmm pir-codata.1
+../hmmls tmp.hmm pir-codata.2
+../hmmls tmp.hmm strider.1
+../hmmb tmp.hmm minitrain.slx
+../hmmls tmp.hmm embl.1
+../hmmls tmp.hmm embl.2
+../hmmls tmp.hmm extended-fasta.1
+../hmmls tmp.hmm extended-selex.1
+../hmmls tmp.hmm fasta.1
+../hmmls tmp.hmm gcg.1
+../hmmls tmp.hmm genbank.1
+../hmmls tmp.hmm ig.1
+../hmmls tmp.hmm selex.1
+../hmmls tmp.hmm squid.1
+../hmmls tmp.hmm staden-expfile.1

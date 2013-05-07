@@ -1,0 +1,7 @@
+# Example of a random model file for DNA or RNA sequences
+#
+
+Nucleic
+
+# A   C    G    T
+0.30 0.20 0.20 0.30

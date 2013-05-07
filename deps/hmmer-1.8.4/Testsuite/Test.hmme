@@ -1,0 +1,13 @@
+#hmme option tests...
+../hmmb tmp.hmm extended-selex.1
+../hmme tmp.hmm
+../hmme -b tmp.hmm
+../hmme -f tmp.hmm
+../hmme -h
+../hmme -n 10 tmp.hmm
+../hmme -o tmp.sc tmp.hmm
+../hmme -q tmp.hmm
+../hmme -r ../Demos/nucleic.rnd tmp.hmm
+../hmme -s 666 tmp.hmm
+../hmme -B tmp.hmm
+

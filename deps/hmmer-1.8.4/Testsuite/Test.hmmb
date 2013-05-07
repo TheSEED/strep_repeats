@@ -1,0 +1,17 @@
+#hmmb option tests...
+../hmmb tmp.hmm extended-selex.1 
+../hmmb -d tmp.hmm extended-selex.1
+../hmmb -h tmp.hmm extended-selex.1
+../hmmb -p ../Demos/Nucleic.pri tmp.hmm extended-selex.1
+../hmmb -r ../Demos/nucleic.rnd tmp.hmm extended-selex.1
+../hmmb -v tmp.hmm extended-selex.1
+../hmmb -w tmp.hmm extended-selex.1
+../hmmb -A 0.9 tmp.hmm extended-selex.1
+../hmmb -d -C 0.01 tmp.hmm extended-selex.1 
+../hmmb -d -D 0.98 tmp.hmm extended-selex.1 
+../hmmb -M tmp.hmm extended-selex.1 
+../hmmb -M -E 0.15 tmp.hmm extended-selex.1
+../hmmb -R tmp.hmm extended-selex.1 
+../hmmb -W tmp.slx tmp.hmm extended-selex.1 
+../hmmb tmp.hmm msf.1
+../hmmb -P ../Demos/PAM250 tmp.hmm msf.1

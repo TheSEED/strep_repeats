@@ -1,0 +1,103 @@
+.TH "hmme" l "March 1995" "HMMER 1.8" hmme
+
+.SH NAME
+.TP
+.I hmme
+- emit likely sequences from an HMM
+.SH SYNOPSIS
+.B hmme [options] hmmfile 
+.SH DESCRIPTION
+.I hmme
+creates a set of likely sequences, according to the statistics
+of a given HMM. This is sometimes useful for comparing different
+HMMs, or just spot-checking that an HMM contains reasonable
+numbers (i.e., a globin HMM should produce sequences that look
+like globins).
+.PP
+By default, 
+.I hmme
+produces 10 likely sequences and prints them to stdout in a
+multiple alignment format.
+There are options for changing the number of sequences or the format.
+
+.SH OPTIONS
+.TP
+-b
+Emit the single best sequence, according to the model. "Best" is defined
+here as the most probable sequence. Compare the 
+.I -B 
+option.
+.TP
+-f
+Print the sequences in FASTA (unaligned) format instead of SELEX alignment
+format.
+.TP
+-h
+Print short usage and help info for the program.
+.TP
+-n <number>
+Generate 
+.I <number> 
+sequences instead of the default 10.
+.TP 
+-o <outfile>
+Save the sequences in a file 
+.I <outfile>
+rather than printing them to stdout.
+.TP
+-q
+quiet -- suppress the verbose banner. Useful for piping the output
+of hmme into another program or script.
+.TP
+-r <rfile>
+Read the random sequence model from <rfile>. This model is used as the
+null hypothesis for calculating log-odds alignment scores.
+.TP
+-s <seed>
+Set the seed of the random number generator to
+.I <seed>.
+Useful for re-generating the same data sets, by giving
+the same seed.
+.TP
+-B
+Generate the single best sequence. Here, "best" is defined as
+the highest scoring sequence, not the most probable sequence.
+(Recall that scoring uses a log-odds system, the probability
+of the sequence given the model divided by the probability
+of the sequence given a simple random sequence model.) The
+difference between 
+.I -b
+and 
+.I -B
+is usually minor.
+.SH SEE ALSO
+.PP
+Overview page: hmmer(l)
+.PP
+Individual man pages: hmma(l), hmmb(l), hmmfs(l), hmmls(l), hmms(l), 
+hmmsw(l), hmmt(l), hmm_convert(l)
+.PP
+User guide and tutorial: Userguide.ps
+
+.SH BUGS
+No major bugs known.
+
+Not very tolerant of errors on the command line.
+
+.SH NOTES
+
+This software and documentation is Copyright (C) 1992-1995, Sean R. Eddy.
+It is freely distributable under terms of the GNU General Public
+License. See COPYING, in the source code distribution, for more
+details, or contact me.
+
+.nf
+Sean Eddy
+Dept. of Genetics, Washington Univ. School of Medicine
+660 S. Euclid Box 8232
+St Louis, MO 63110 USA
+Phone: 1-314-362-7666
+FAX  : 1-314-362-2985
+Email: eddy@genetics.wustl.edu
+.fi
+

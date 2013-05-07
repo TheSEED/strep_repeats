@@ -1,0 +1,162 @@
+.TH "hmms" l "March 1995" "HMMER 1.8" hmms
+
+.SH NAME
+.TP
+.I hmms
+- HMM search; search for complete (global) matches to an HMM
+.SH SYNOPSIS
+.B hmms [options] hmmfile seqfile
+.SH DESCRIPTION
+.I hmms
+searches a sequence database
+.I seqfile
+looking for matches to the HMM in
+.I hmmfile.
+A complete match of the HMM to the sequence is required;
+i.e., hmms does a global Needleman/Wunsch style alignment.
+.PP
+hmms is designed to be useful for detecting complete proteins (or,
+less commonly, complete nucleic acid sequences) in sequence
+databases. The requirement for a complete match to the model means
+that it is useful only for whole-sequence models; for instance, a
+globin HMM will recognize other complete globin sequences (though it
+will not recognize the few proteins with multiple globin domains!)
+.PP
+Another use for hmms is to score the sequences of a training
+database, during the construction of a new HMM; it is often
+useful to see which example sequences have low scores, since
+this can be a tip that those sequences are garbage.
+.PP
+The scores reported by hmms are in bits of information. Specifically,
+they are log-odds scores: the log of the ratio of the probability of
+the sequence given the model and the probability of the sequence given
+a simple random sequence model.  This score is related to the
+statistical significance of the alignment. A score of zero is
+marginal; according to the model's statistics, it's 50% likely that
+the alignment is a real match to the model, and 50% likely that it's
+not. The higher the score, the better; a score of 100 means that it is
+2^100-fold more likely that the sequence is a match to the model than
+not. In practice, a database contains many more unrelated sequences
+than related ones, so the actual score required for statistical
+significance is somewhat higher than zero -- as a rule of thumb for
+protein database searches, don't trust scores lower than the log2 of
+the number of seqs in the database). This is 16 bits for our current
+SWIR5 composite protein database of 57,000 sequences. See the User Guide
+for more details.
+.PP
+hmms also includes some additional options that enable you to
+sample suboptimal alignments in addition to the optimal alignment.
+Fancy alignment output is toggled on when you ask for suboptimal
+alignments. -S asks for suboptimal alignments (one by default).
+-N <num> sets the number of alignments to sample. -K sets the
+kT temperature factor for the sampling; 1.0 is the default, where
+alignments are sampled according to their actual probability.
+Set kT higher for more randomized alignments, lower for less
+suboptimal alignments. The suboptimal alignment code is the same
+as is used for simulated annealing. See documentation on simulated
+annealing in the user's guide and the hmmt man page for more
+details. 
+.PP
+Note the differences between the different HMM searching programs.
+.I hmms
+looks for a global alignment of HMM to sequences (Needleman/Wunsch
+style); overhangs of unmatches sequence are not permitted, and
+the full model must be matched.
+.I hmmls
+looks for one or more local alignments of the full model to a subsequence
+of each database sequence; unmatches sequence overhangs are allowed.
+.I hmmsw
+looks for the best fragmentary match of a subsequence to part of
+the model (Smith/Waterman style).
+.I hmmfs
+looks for multiple non-overlapping matches of subsequences to
+parts of the model (modified multiple-hit Smith/Waterman).
+.I hmms 
+is useful for scoring or detecting whole proteins with complete models;
+.I hmmls
+is useful for scoring or detecting intact domains in protein sequences
+or complete repeats in nucleic acid sequences;
+.I hmmsw
+is useful for general protein database searching, allowing for
+possible incomplete matches to a model; 
+.I hmmfs
+is useful for general nucleic acid database searching or for
+scoring/detecting domains in multidomain proteins, allowing
+for multiple non-overlapping matches per sequence.
+
+.SH OPTIONS
+.TP
+-h
+Print short usage and help info for the program.
+.TP
+-q
+quiet -- suppress the verbose banner. Useful for piping the output
+of hmmfs into another program or script.
+.TP
+-r <rfile>
+Read the random sequence model from <rfile>. This model is used as the
+null hypothesis for calculating log-odds alignment scores.
+.TP
+-t <thresh>
+Report only matches above a score of 
+.I <thresh>
+bits. This is set to zero by default. Either negative or positive
+thresholds are acceptable.
+.TP
+-F
+For each hit, print a "fancy" BLAST-style representation of the alignment
+to the model. Three lines are shown; a line for the model consensus,
+a line for the matched positions, and a line for the sequence.
+In the model consensus line, upper-case letters represent strong
+consensus positions, lower-case letters represent the best identity
+at a weak consensus position. (Strong and weak are arbitrarily defined;
+for protein models, log-odds symbol scores above 2.0 bits are called
+"strong" consensus.) On the match line, letters represent exact matches
+to the highest scoring possible residue according to the HMM, and +'s
+represent matches to positive-scoring residues.
+.TP
+-K <kT>
+Sets the temperature (degree of suboptimality) for suboptimal sampling.
+Very high kT (> 5) produces essentially random alignments. kT=1.0
+samples alignments according to their actual probability given
+the model. kT = 0.0 ("absolute zero") produces the optimal alignment.
+Default is 1.0. Only has effect if -S is also toggled.
+.TP
+-N <num>
+Set the number of suboptimal alignments to sample. Default is 1. Only 
+has effect if -S is also toggled.
+.TP
+-S
+Toggles suboptimal alignment sampling on, in addition to seeing
+the optimal alignment.
+.SH SEE ALSO
+.PP
+Overview page: hmmer(l)
+.PP
+Individual man pages: hmma(l), hmmb(l), hmme(l), hmmfs(l), hmmls(l), 
+hmmsw(l), hmmt(l), hmm_convert(l)
+.PP
+User guide and tutorial: Userguide.ps
+
+.SH BUGS
+No major bugs known.
+
+Not very tolerant of errors on the command line.
+
+.SH NOTES
+
+This software and documentation is Copyright (C) 1992-1995, Sean R. Eddy.
+It is freely distributable under terms of the GNU General Public
+License. See COPYING, in the source code distribution, for more
+details, or contact me.
+
+.nf
+Sean Eddy
+Dept. of Genetics, Washington Univ. School of Medicine
+660 S. Euclid Box 8232
+St Louis, MO 63110 USA
+Phone: 1-314-362-7666
+FAX  : 1-314-362-2985
+Email: eddy@genetics.wustl.edu
+.fi
+

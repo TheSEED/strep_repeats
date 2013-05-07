@@ -1,0 +1,75 @@
+.TH "hmm_convert" l "March 1995" "HMMER 1.8" hmm_convert
+
+.SH NAME
+.TP
+.I hmm_convert
+- convert HMM files from binary to ASCII, or vice versa
+.SH SYNOPSIS
+.B hmm_convert [options] <old HMM file> <new HMM file>
+.SH DESCRIPTION
+.I hmm_convert
+converts between HMM file formats.
+Two formats are used: a binary format, and an ASCII format.
+The binary format is more compact but it is not always portable
+between different machines. 
+The ASCII format is also advantageous for 
+manipulating HMM files, since it is easily readable
+by scripts.
+By default, 
+.I hmm_convert 
+reads
+.I <old HMM file>
+and saves it in ASCII format in
+.I <new HMM file>.
+The 
+.I -b
+option causes the program to create a binary file.
+.PP
+.I hmm_convert
+also supports conversions into GCG Profile format, via
+the -P option. This lets you build HMMs with the HMMER
+package, but use GCG software to do searches. This is
+used for using specialized hardware (such as the Compugen
+Bioccelarator) which runs GCG profiles but not HMMs.
+The resulting profile is only an approximation of an HMM.
+.SH OPTIONS
+.TP
+-b
+Save the new HMM file in binary format rather than ASCII.
+.TP
+-h
+Print short usage and help info for the program.
+.TP
+-P
+Convert to a format compatible with the .prf GCG profile
+format.
+.SH SEE ALSO
+.PP
+Overview page: hmmer(l)
+.PP
+Individual man pages: hmma(l), hmmb(l), hmme(l), hmmfs(l), hmmls(l), 
+hmms(l), hmmsw(l), hmmt(l)
+.PP
+User guide and tutorial: Userguide.ps
+
+.SH BUGS
+No major bugs known.
+.PP
+Not very tolerant of errors on the command line.
+
+.SH NOTES
+This software and documentation is Copyright (C) 1992-1995, Sean R. Eddy.
+It is freely distributable under terms of the GNU General Public
+License. See COPYING, in the source code distribution, for more
+details, or contact me.
+
+.nf
+Sean Eddy
+Dept. of Genetics, Washington Univ. School of Medicine
+660 S. Euclid Box 8232
+St Louis, MO 63110 USA
+Phone: 1-314-362-7666
+FAX  : 1-314-362-2985
+Email: eddy@genetics.wustl.edu
+.fi
+

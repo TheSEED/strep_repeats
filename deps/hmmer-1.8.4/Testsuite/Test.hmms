@@ -1,0 +1,11 @@
+#hmms option tests...
+../hmmb tmp.hmm extended-selex.1
+../hmms tmp.hmm extended-selex.1
+../hmms -h
+../hmms -q tmp.hmm extended-selex.1
+../hmms -r ../Demos/nucleic.rnd tmp.hmm extended-selex.1
+../hmms -t 20 tmp.hmm extended-selex.1
+../hmms -F tmp.hmm extended-selex.1
+../hmms -S tmp.hmm extended-selex.1
+../hmms -S -K 0.5 tmp.hmm extended-selex.1
+../hmms -S -N 5 tmp.hmm extended-selex.1

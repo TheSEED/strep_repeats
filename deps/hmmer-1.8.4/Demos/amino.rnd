@@ -1,0 +1,7 @@
+# Example of a random model file for protein sequences.
+#
+
+Amino
+
+# A  C   D   E   F   G   H   I   K   L   M   N   P   Q   R   S   T   V   W   Y
+.05 .05 .05 .05 .05 .05 .05 .05 .05 .05 .05 .05 .05 .05 .05 .05 .05 .05 .05 .05
