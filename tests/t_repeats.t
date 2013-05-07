@@ -4,7 +4,7 @@ use strict;
 use Data::Dumper;
 use File::Slurp;
 
-my $test = Test::Cmd->new(prog => "$ENV{KB_TOP}/bin/pneumococcal_repeat_annotation");
+my $test = Test::Cmd->new(prog => "$ENV{KB_TOP}/bin/pneumococcal_repeat_annotation", workdir => '');
 ok($test, "created pneumococcal_repeat_annotation test object");
 
 my @pneumo_expected = read_file("contigs.repeats.tab");
@@ -22,7 +22,7 @@ if (@diffs)
 	print @diffs;
 }
 
-my $test = Test::Cmd->new(prog => "$ENV{KB_TOP}/bin/suis_repeat_annotation");
+my $test = Test::Cmd->new(prog => "$ENV{KB_TOP}/bin/suis_repeat_annotation", workdir => '');
 ok($test, "created suis_repeat_annotation test object");
 
 $test->run(args => "contigs");
